@@ -17,3 +17,17 @@ coverage/
 .idea/
 
 *.bak
+
+# Arquivos locais e credenciais
+.env
+.env.local
+.env.*.local
+*.bak
+
+# Relatorios de testes
+test-results/
+playwright-report/
+playwright/.auth/
+
+# Pacotes de desenvolvimento
+*.zip
