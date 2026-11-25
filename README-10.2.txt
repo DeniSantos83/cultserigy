@@ -1,0 +1,1 @@
+Atualiza ArtistPanel.jsx e Feed.jsx. Categoria obrigatória na interface para novas publicações e edição. Obras antigas permanecem sem categoria até edição. Edição de título, texto e categoria preserva mídias e ID. Filtro por categoria da publicação na página carregada. Faça backup antes de extrair.

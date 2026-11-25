@@ -1,0 +1,17 @@
+# Dependencias, compilacao, caches
+node_modules/
+dist/
+coverage/
+.vite/
+*.log
+.DS_Store
+
+# Configuracoes privadas locais e chaves
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Ferramentas locais
+.vscode/
+.idea/

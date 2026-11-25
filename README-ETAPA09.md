@@ -1,0 +1,2 @@
+# Etapa 09
+Inclui a correção administrativa anterior. Agenda em /agenda e notificações em /notificacoes. Eventos cadastrados pelo admin; município opcional no banco para compatibilidade com eventos antigos. Notificações internas geradas por triggers no Supabase, sem push/email; atualizar a página para novas mensagens. Interações iguais por destinatário são agrupadas em janela de um minuto. Não há retroatividade. Datas exibidas no fuso de Sergipe. Testar npm run build e fluxos com duas contas. Nenhuma dependência nova.

@@ -1,0 +1,2 @@
+# Etapa 08
+Rota /admin. O banco já recebeu a migração administrativa. Cadastre uma conta normal e confirme o e-mail; o responsável pelo banco deve inserir o UUID do perfil na tabela administradores. Nunca permita inserção pelo navegador. Não há suspensão global de usuários, apenas de artistas. Ocultar publicação não torna imagens públicas privadas. Testar com administrador e usuário comum antes de publicar. A exclusão de categorias remove vínculos com artistas.
