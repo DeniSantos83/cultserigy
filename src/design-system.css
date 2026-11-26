@@ -151,3 +151,16 @@ header.cult-global-nav .cult-global-account{margin-left:auto;flex:none;gap:8px}
 .profile-custom .feed-body{background:linear-gradient(135deg,color-mix(in srgb,var(--artist-primary) 13%,var(--surface)),var(--surface) 65%)}
 .profile-custom .profile-category{background:color-mix(in srgb,var(--artist-secondary) 18%,transparent);padding:8px 12px;border-radius:4px}
 .profile-custom .profile-social a,.profile-custom .artist-buttons button{border:2px solid var(--artist-border);background:color-mix(in srgb,var(--artist-primary) 12%,var(--surface))}
+
+/* 12.7 — navigation and artist actions */
+.feed-shell .feed-author .artist-link{color:var(--green);font-weight:600;text-decoration:none;border:0;background:transparent;padding:4px 6px;margin-inline-start:-6px;border-radius:6px;text-align:left;line-height:1.4;overflow-wrap:anywhere}
+.feed-shell .feed-author .artist-link:hover{background:var(--tint);text-decoration:none}
+.feed-shell .feed-right .cult-artist-row{display:flex;align-items:center;gap:9px;width:100%;min-height:48px;padding:7px 6px;border:0;border-radius:8px;background:transparent;color:var(--ink);text-align:left;text-decoration:none;font-weight:600;box-sizing:border-box}
+.cult-artist-row-name{flex:1;min-width:0;overflow-wrap:anywhere;font-size:13px}.cult-artist-row svg{flex:none;color:var(--subtle)}
+.feed-shell .feed-right .cult-artist-row:hover{background:var(--tint);color:var(--green);text-decoration:none}
+.cult-return,.auth-back,.feed-shell .artist-back,.cult-profile-link,.feed-shell .cult-edit-profile{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;max-width:100%;box-sizing:border-box;padding:8px 12px;border:1px solid var(--stroke);border-radius:9px;background:var(--surface);color:var(--green);font-weight:600;text-decoration:none;white-space:normal;cursor:pointer}
+.cult-return:hover,.auth-back:hover,.feed-shell .artist-back:hover,.cult-profile-link:hover,.feed-shell .cult-edit-profile:hover{background:var(--tint);text-decoration:none;border-color:var(--green)}
+.feed-shell .cult-edit-profile{border-color:var(--artist-border,var(--stroke));margin-block:6px}
+.cult-nav a:hover,.cult-community-sidebar a:hover,.profile-social a:hover,.feed-actions a:hover{text-decoration:none}
+.feed-shell .artist-link:focus-visible,.feed-shell .cult-artist-row:focus-visible,.cult-return:focus-visible,.auth-back:focus-visible,.artist-back:focus-visible,.cult-profile-link:focus-visible,.cult-edit-profile:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+@media(max-width:650px){.feed-shell .feed-author .artist-link{min-height:44px}.cult-return,.auth-back,.cult-profile-link,.cult-edit-profile{min-height:44px}}
