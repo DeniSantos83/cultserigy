@@ -69,3 +69,85 @@ body:has(.account-page,.legal-page){background:var(--canvas);color:var(--ink)}
 :where(.feed-shell,.discover-shell,.admin-page,.account-page,.auth-page) :where(input,textarea)::placeholder{color:var(--subtle);opacity:1}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 @media(forced-colors:active){:where(a,button,input,select,textarea):focus-visible{outline:3px solid Highlight!important}.cult-tabs button[aria-pressed=true]{border:2px solid Highlight}}
+
+/* 11.7.4.3 — denúncias */
+.cult-report{position:fixed;inset:0;margin:auto;width:min(440px,calc(100% - 24px));max-height:90dvh;overflow:auto;padding:24px;border:1px solid var(--stroke);border-radius:var(--radius);background:var(--surface);color:var(--ink);box-sizing:border-box}.cult-report::backdrop{background:#0009}.cult-report form{display:flex;flex-direction:column;align-items:stretch;gap:12px}.cult-report label{display:flex;flex-direction:column;gap:6px;font-weight:600}.cult-report select,.cult-report textarea{width:100%;box-sizing:border-box;border:1px solid var(--stroke);border-radius:9px;background:var(--canvas);color:var(--ink);padding:10px;font:inherit}.cult-report button{min-height:44px;border:1px solid var(--stroke);border-radius:9px;padding:10px 14px;background:var(--surface);color:var(--ink);margin-top:8px}.cult-report button[type=submit]{background:var(--green);color:var(--on-green)}.cult-report a{color:var(--green)}.cult-report textarea{resize:vertical}.cult-report p{overflow-wrap:anywhere}
+
+/* 11.7.4.4 — administrative editing */
+.cult-event-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;background:var(--surface);border:1px solid var(--stroke);border-radius:var(--radius);padding:20px;margin-bottom:20px}.cult-event-form h3,.cult-event-form .admin-actions{grid-column:1/-1;margin:0}.cult-event-form label{display:grid;gap:6px;font-weight:600;font-size:14px}.cult-event-form input,.cult-event-form textarea{width:100%;min-width:0;box-sizing:border-box}.cult-event-form textarea{resize:vertical}.cult-event-form button{min-height:44px}@media(max-width:650px){.cult-event-form{grid-template-columns:minmax(0,1fr);padding:14px}}
+
+/* Etapa 12: navegação compartilhada */
+.cult-global-nav,.feed-shell>.cult-global-nav,.discover-shell>.cult-global-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 20px;margin:0 0 20px;border-radius:0;border-width:0 0 1px;overflow:visible;position:relative;z-index:20}
+.cult-global-nav .cult-global-links{display:flex;align-items:center;gap:4px;flex:0 1 auto;width:auto;margin:0;order:0}
+.cult-global-nav .cult-global-links a{white-space:nowrap;padding:8px 10px}
+.cult-global-account{display:flex;align-items:center;gap:10px;margin-left:auto}
+.cult-global-account .cult-theme{margin:0;flex-shrink:0}
+.cult-account-menu{position:relative;color:var(--ink)}
+.cult-account-menu summary{cursor:pointer;list-style:none;border:1px solid var(--stroke);border-radius:9px;padding:12px;min-height:44px;white-space:nowrap}
+.cult-account-menu summary::-webkit-details-marker{display:none}
+.cult-account-dropdown{position:absolute;right:0;top:calc(100% + 8px);min-width:205px;background:var(--surface);border:1px solid var(--stroke);border-radius:12px;padding:8px;box-shadow:0 12px 30px #0003;display:grid;gap:4px;z-index:30}
+.cult-account-dropdown a,.cult-account-dropdown button{display:block;text-align:left;padding:12px;color:var(--ink);background:transparent;border:0;border-radius:6px;text-decoration:none;font:inherit;cursor:pointer}
+.cult-account-dropdown a:hover,.cult-account-dropdown button:hover{background:var(--canvas)}
+.cult-return{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px;color:var(--ink);text-decoration:underline}
+@media(max-width:760px){.cult-global-nav,.feed-shell>.cult-global-nav,.discover-shell>.cult-global-nav{padding:10px 12px;gap:8px}.cult-global-nav .cult-global-links{order:5;flex:1 0 100%;justify-content:space-between}.cult-global-nav .cult-global-links a{flex:1;text-align:center;padding:8px 4px}.cult-global-nav>input{order:4;flex:1 0 100%}.cult-global-account{gap:6px}.cult-account-menu summary{padding:10px 8px}}
+
+/* 12.2 — unified navigation and page frame */
+body{background:var(--canvas);color:var(--ink)}
+.cult-page-shell{min-height:100dvh;background:var(--canvas);color:var(--ink)}
+.cult-page-shell>.admin-page{max-width:1240px;margin:0 auto;padding:32px 20px;min-height:0;background:var(--canvas);color:var(--ink)}
+header.cult-global-nav,.layout>header.cult-global-nav,.feed-shell>header.cult-global-nav,.discover-shell>header.cult-global-nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:12px;width:100%;max-width:none;height:auto;min-height:68px;flex-shrink:0;margin:0;padding:10px max(20px,calc((100% - 1240px)/2));background:var(--surface);color:var(--ink);border:0;border-bottom:1px solid var(--stroke);border-radius:0;position:relative;z-index:30;overflow:visible;font:15px/1.4 Arial,Helvetica,sans-serif}
+header.cult-global-nav .cult-brand{display:inline-flex;align-items:center;gap:5px;font:800 24px/1 Arial,Helvetica,sans-serif;letter-spacing:-1.3px;white-space:nowrap;margin:0;flex:none;text-decoration:none!important}
+header.cult-global-nav .cult-brand span{font:700 11px/1 Arial,Helvetica,sans-serif;letter-spacing:0;color:var(--green)}
+header.cult-global-nav .cult-global-links{display:flex;flex:0 0 auto;gap:3px;width:auto;margin:0;order:0;font:600 14px/1.4 Arial,Helvetica,sans-serif}
+header.cult-global-nav .cult-global-links a{flex:none;padding:9px 10px;white-space:nowrap}
+header.cult-global-nav>input{flex:1 1 160px;min-width:120px;max-width:280px;width:auto;order:0;font:inherit}
+header.cult-global-nav .cult-global-account{margin-left:auto;flex:none;gap:8px}
+.cult-account-menu summary{display:flex;align-items:center;gap:7px;padding:5px 9px;font-size:14px}
+.cult-login{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 16px;border-radius:9px;background:var(--green);color:var(--on-green)!important;text-decoration:none!important;font-weight:700}
+.cult-account-dropdown a,.cult-account-dropdown button{font-size:14px;line-height:1.4}
+.layout{background:var(--canvas);color:var(--ink);overflow:visible;min-height:100dvh;height:auto}
+.layout>main{min-height:calc(100dvh - 68px);flex:1;overflow:hidden}
+.cult-page-shell .admin-header h1,.account-page h1,.legal-page h1,.artist-panel>h1{font-family:Georgia,serif;font-weight:500;letter-spacing:-.035em}
+@media(max-width:1000px){header.cult-global-nav>input{order:4;flex:1 0 100%;max-width:none;width:100%}}
+@media(max-width:700px){header.cult-global-nav,.layout>header.cult-global-nav,.feed-shell>header.cult-global-nav,.discover-shell>header.cult-global-nav{padding:8px 12px;gap:6px}header.cult-global-nav .cult-brand{font-size:21px}header.cult-global-nav .cult-global-links{order:3;flex:1 0 100%;justify-content:space-between}header.cult-global-nav .cult-global-links a{flex:1;padding:8px 4px;text-align:center}header.cult-global-nav .cult-account-menu summary>span:nth-child(2){display:none}header.cult-global-nav .cult-global-account{gap:5px}.cult-page-shell>.admin-page{padding:24px 12px}.layout>main{min-height:calc(100dvh - 112px)}}
+
+/* 12.3 — menu complementar compartilhado */
+.cult-community-grid{display:grid;grid-template-columns:205px minmax(0,1fr);gap:28px;max-width:1240px;margin:0 auto;padding:32px 20px;box-sizing:border-box;align-items:start}
+.cult-community-grid>.discover-main,.cult-community-grid>.community-page{width:100%;max-width:none;min-width:0;margin:0;padding:0;box-sizing:border-box;min-height:0}
+.cult-community-sidebar{position:sticky;top:20px;align-self:start;min-width:0}
+.cult-community-sidebar a,.cult-community-sidebar button{font:inherit;font-size:14px;min-height:44px;text-align:left;background:transparent;border:0;color:var(--ink);cursor:pointer}
+.cult-community-sidebar .selected{background:var(--tint);color:var(--green)}
+.cult-community-grid .discover-grid{grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))}
+@media(max-width:1050px){.cult-community-grid{grid-template-columns:150px minmax(0,1fr);gap:16px;padding:24px 16px}}
+@media(max-width:650px){.cult-community-grid{display:block;padding:20px 12px}.cult-community-sidebar{position:static;display:flex;flex-direction:row;flex-wrap:wrap;max-width:100%;margin:0 0 16px;padding:4px;gap:4px}.cult-community-sidebar a,.cult-community-sidebar button{flex-direction:row;min-width:0;max-width:none;width:auto;white-space:nowrap;padding:8px}.cult-community-grid .discover-filters{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* 12.4 — administration and mobile navigation */
+.cult-admin-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px;align-items:start}.cult-admin-menu{display:grid;gap:5px;position:sticky;top:16px;padding:12px;border:1px solid var(--stroke);border-radius:14px;background:var(--surface)}.cult-admin-menu>span{font-size:11px;letter-spacing:.12em;color:var(--subtle);padding:10px}.cult-admin-menu button{min-height:44px;text-align:left;border:0;border-radius:8px;background:transparent;color:var(--ink);padding:10px 12px;font:inherit;cursor:pointer}.cult-admin-menu button[aria-current=page],.cult-admin-menu button:hover{background:var(--tint);color:var(--green)}.cult-admin-content{min-width:0;overflow-wrap:anywhere}.cult-admin-content h2{font:500 clamp(28px,4vw,40px)/1.2 Georgia,serif;margin:12px 0}.cult-admin-crumb{color:var(--subtle)}.cult-admin-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(155px,100%),1fr));gap:12px;margin:24px 0}.cult-admin-metrics>div{display:grid;gap:10px;padding:18px;border:1px solid var(--stroke);border-radius:12px;background:var(--surface)}.cult-admin-metrics strong{font-size:28px}.cult-global-nav .cult-mobile-nav{display:none}
+@media(max-width:700px){.cult-admin-layout{grid-template-columns:minmax(0,1fr);gap:18px}.cult-admin-menu{position:static;grid-template-columns:repeat(2,minmax(0,1fr))}.cult-admin-menu>span{grid-column:1/-1}.cult-global-nav .cult-global-links{display:none!important}.cult-global-nav .cult-mobile-nav{display:flex;position:fixed;inset:auto 0 0;z-index:40;justify-content:space-around;gap:4px;padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px));margin:0;width:100%;box-sizing:border-box;background:var(--surface);border-top:1px solid var(--stroke)}.cult-mobile-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;flex:1;min-height:48px;font-size:12px;padding:4px!important}.cult-mobile-nav a[aria-current=page]{background:var(--tint);color:var(--green)}body:has(.cult-mobile-nav){padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}.layout>main{min-height:calc(100dvh - 140px)}}
+
+/* 12.5 — personal workspaces */
+.artist-panel,.account-page{width:100%;max-width:1240px;box-sizing:border-box;margin:0 auto;padding:32px 20px 48px;min-height:0}
+.cult-personal-heading{margin:0 0 28px;padding:0 0 20px;border-bottom:1px solid var(--stroke)}
+.cult-personal-heading>span{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--green)}
+.cult-personal-heading h1{font:500 clamp(32px,5vw,46px)/1.15 Georgia,serif;letter-spacing:-.035em;margin:10px 0}
+.cult-personal-heading p{color:var(--subtle);margin:0;line-height:1.5}
+.cult-personal-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px;align-items:start}
+.cult-personal-single{grid-template-columns:minmax(0,1fr);max-width:760px}
+.cult-personal-menu.cult-tabs{display:grid;grid-template-columns:minmax(0,1fr);gap:5px;position:sticky;top:16px;padding:12px;background:var(--surface);border:1px solid var(--stroke);border-radius:14px;margin:0}
+.cult-personal-menu.cult-tabs button{width:100%;text-align:left;min-height:44px;padding:10px 12px;border:0;border-radius:8px;background:transparent;color:var(--ink)}
+.cult-personal-menu.cult-tabs button[aria-pressed=true]{background:var(--tint);color:var(--green);font-weight:700}
+.cult-personal-content{min-width:0;max-width:850px;overflow-wrap:anywhere}
+.cult-personal-content [hidden]{display:none!important}
+.cult-personal-content>.panel-form,.cult-personal-content>section,.cult-personal-content>div>.panel-form{background:var(--surface);border:1px solid var(--stroke);border-radius:14px;padding:24px;margin:0 0 18px}
+.cult-personal-content h2{font-size:22px;margin:0 0 16px}
+.cult-personal-content input:not([type=checkbox]),.cult-personal-content textarea,.cult-personal-content select{box-sizing:border-box;max-width:100%;min-width:0;background:var(--canvas);color:var(--ink);border:1px solid var(--stroke);border-radius:8px;padding:10px;min-height:44px;font:inherit}
+.cult-personal-content button{min-height:44px;max-width:100%;white-space:normal}
+.cult-personal-content button[type=submit],.cult-personal-content form button:not([type=button]){background:var(--green);color:var(--on-green);border:1px solid var(--green);border-radius:8px;padding:10px 16px;font-weight:600;justify-self:start}
+@media(max-width:700px){.artist-panel,.account-page{padding:20px 12px 32px}.cult-personal-layout{grid-template-columns:minmax(0,1fr);gap:16px}.cult-personal-menu.cult-tabs{position:static;grid-template-columns:repeat(3,minmax(0,1fr));padding:6px}.cult-personal-menu.cult-tabs button{text-align:center;padding:8px 4px;font-size:13px}.cult-personal-content>.panel-form,.cult-personal-content>section,.cult-personal-content>div>.panel-form{padding:16px}.cult-personal-heading{margin-bottom:18px}}
+.profile-colors{border:1px solid currentColor;border-radius:12px;padding:16px;min-width:0}.profile-colors input[type=color]{width:64px;height:44px;padding:3px;cursor:pointer}.profile-custom{border:2px solid var(--artist-border);border-top:5px solid var(--artist-primary);border-radius:12px}.profile-custom h2,.profile-custom strong{border-inline-start:5px solid var(--artist-primary);padding-inline-start:10px}.profile-custom .profile-category{border-inline-start:4px solid var(--artist-secondary);padding-inline-start:10px}.profile-social{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.profile-social a,.profile-custom .artist-buttons button{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 12px;border:1px solid var(--artist-border);border-radius:9px;color:inherit;text-decoration:none}.profile-social a:hover{outline:2px solid var(--artist-secondary)}.profile-social a span{text-transform:capitalize}.profile-colors .profile-custom{padding:12px;margin:12px 0}
+
+/* 12.6.3 — explicit profile accents */
+.feed-card.profile-custom,.profile-colors .profile-custom{border:2px solid var(--artist-border);border-top:6px solid var(--artist-primary)}
+.profile-custom .feed-body{background:linear-gradient(135deg,color-mix(in srgb,var(--artist-primary) 13%,var(--surface)),var(--surface) 65%)}
+.profile-custom .profile-category{background:color-mix(in srgb,var(--artist-secondary) 18%,transparent);padding:8px 12px;border-radius:4px}
+.profile-custom .profile-social a,.profile-custom .artist-buttons button{border:2px solid var(--artist-border);background:color-mix(in srgb,var(--artist-primary) 12%,var(--surface))}

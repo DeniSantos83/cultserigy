@@ -31,3 +31,5 @@ playwright/.auth/
 
 # Pacotes de desenvolvimento
 *.zip
+
+backup-src-*/
